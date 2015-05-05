@@ -9,6 +9,7 @@ gem 'cancancan', '~> 1.10'
 gem "twitter-bootstrap-rails"
 gem "haml-rails", "~> 0.9"
 gem 'paperclip', '~>4.2'
+gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
