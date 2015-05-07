@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-
+gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem "twitter-bootstrap-rails"
 gem "haml-rails", "~> 0.9"
