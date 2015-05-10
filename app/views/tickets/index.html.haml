@@ -1,6 +1,6 @@
 .btn-group
   %button.btn.btn-inverse{:href => "#"} 
-    =link_to 'New ticket', new_project_ticket_path 
+    =link_to 'New ticket', new_project_ticket_path(@project) 
 %br
 .panel.panel-default
   .panel-heading
@@ -12,21 +12,21 @@
           %th Tittle
           %th Description
           %th{:colspan => "3"}
-        - @project.each do |project|
+        - @ticket.each do |project|
           %tr
-            %td= ticket.tittle
-            %td= ticket.description
+            %td= @ticket.tittle
+            %td= @ticket.description
             %td
               .btn-group
                 %button.btn.btn-inverse.btn-xs{:href => "#"} 
-                  = link_to 'Show', ticket_path(ticket)
+                  = link_to 'Show', project_ticket_path(@project,@ticket)
             %td
               .btn-group
                 %button.btn.btn-inverse.btn-xs{:href => "#"} 
-                  = link_to "Edit", edit_ticket_path(ticket)
+                  = link_to "Edit", edit_project_ticket_path(@project,@ticket)
             %td
               .btn-group
                 %button.btn.btn-inverse.btn-xs{:href => "#"} 
-                  =link_to 'Destroy', ticket_path(ticket), |
+                  =link_to 'Destroy', project_ticket_path(@project,@ticket), |
                 method: :delete,                          |
                 data: { confirm: 'Are you sure?' }        |
