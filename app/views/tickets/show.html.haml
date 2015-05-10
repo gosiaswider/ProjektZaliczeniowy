@@ -1,0 +1,12 @@
+%h3
+  %strong tittle:
+  = @ticket.tittle
+%h3
+  %strong Description:
+  = @ticket.description
+.btn-group
+  %button.btn.btn-inverse{:href => "#"} 
+    = link_to 'Edit ticket', edit_ticket_path(@ticket)
+.btn-group
+  %button.btn.btn-inverse{:href => "#"} 
+    = link_to 'Back to tickets', tickets_path

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tittle: MyString
+  description: MyString
+  priority: MyString
+  difficulty: MyString
+  status: MyString
+
+two:
+  tittle: MyString
+  description: MyString
+  priority: MyString
+  difficulty: MyString
+  status: MyString

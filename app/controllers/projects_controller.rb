@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
  
-    redirect_to articles_path
+    redirect_to projects_path
   end
   
   private
