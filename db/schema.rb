@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507162519) do
+ActiveRecord::Schema.define(version: 20150512131926) do
 
   create_table "models", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(version: 20150507162519) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "priority"
+    t.string   "difficulty"
+    t.string   "status"
+    t.integer  "project_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "tickets", ["project_id"], name: "index_tickets_on_project_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
