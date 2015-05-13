@@ -11,3 +11,4 @@
         %tr
           %td= p.name
           %td= p.description
+          %td= link_to 'Edit', edit_project_ticket_path(@project, p) , method: :get, class: "btn btn-default"

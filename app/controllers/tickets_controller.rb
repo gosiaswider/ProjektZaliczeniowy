@@ -5,6 +5,11 @@ class TicketsController < ApplicationController
      @tickets = Project.find(params[:project_id]).tickets
   end
   
+  def edit
+    @project = Project.find(params[:project_id])
+    @ticket = @project.tickets.find(params[:id])
+  end
+  
   def show
     @project = Project.find(params[:project_id])
     @ticket = @project.tickets.find(params[:id])
