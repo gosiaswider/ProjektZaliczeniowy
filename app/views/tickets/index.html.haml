@@ -11,4 +11,6 @@
         %tr
           %td= p.name
           %td= p.description
+          %td= link_to 'Show', project_ticket_path(@project, p) , method: :get, class: "btn btn-default"
           %td= link_to 'Edit', edit_project_ticket_path(@project, p) , method: :get, class: "btn btn-default"
+          %td= link_to 'Delete', project_ticket_path(@project, p), method: :delete,  data: { confirm: 'Are you sure?' }, class: "btn btn-default"
