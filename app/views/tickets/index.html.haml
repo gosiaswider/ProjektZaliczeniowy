@@ -1,0 +1,13 @@
+=link_to 'New ticket', new_project_ticket_path(@project) , method: :get, class: "btn btn-default"
+
+.panel-body
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Name
+        %th Description
+        %th{:colspan => "3"}
+      -  @tickets.each do |p|
+        %tr
+          %td= p.name
+          %td= p.description
