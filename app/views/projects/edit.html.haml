@@ -1,6 +1,5 @@
 %h1 Edit project
 = render 'form'
 %br
-.btn-group
-  %button.btn.btn-inverse.btn-xs{:href => "#"} 
-    = link_to 'Back', project_path
+=link_to 'Back to projects', project_path , method: :get, class: "btn btn-default"
+

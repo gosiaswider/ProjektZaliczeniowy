@@ -4,12 +4,9 @@
 %h3
   %strong Description:
   = @project.description
-.btn-group
-  %button.btn.btn-inverse{:href => "#"} 
-    = link_to 'Edit Project', edit_project_path(@project)
-.btn-group
-  %button.btn.btn-inverse{:href => "#"} 
-    = link_to 'Back to Projects', projects_path
-.btn-group
-  %button.btn.btn-inverse{:href => "#"} 
-    = link_to 'Tickets', project_tickets_path(@project)
+  
+=link_to 'Edit Project', edit_project_path(@project) , method: :get, class: "btn btn-default"
+
+=link_to 'Back to Projects', projects_path , method: :get, class: "btn btn-default"
+
+=link_to 'Tickets', project_tickets_path(@project) , method: :get, class: "btn btn-default"

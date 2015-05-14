@@ -1,5 +1,6 @@
-=link_to 'New project', new_project_path , method: :get, class: "btn btn-default"
+=link_to 'New project', new_project_path , method: :get, class: "btn btn-primary"
 
+%br
 %br
 .panel.panel-default
   .panel-heading
@@ -9,22 +10,29 @@
       %thead
         %tr
           %th Name
-          %th Description
           %th{:colspan => "3"}
         - @project.each do |project|
           %tr
-            %td= project.description
-            %td
-              .btn-group
-                %button.btn.btn-inverse.btn-xs{:href => "#"} 
-                  = link_to 'Show', project_path(project)
-            %td
-              .btn-group
-                %button.btn.btn-inverse.btn-xs{:href => "#"} 
-                  = link_to "Edit", edit_project_path(project)
-            %td
-              .btn-group
-                %button.btn.btn-inverse.btn-xs{:href => "#"} 
-                  =link_to 'Destroy', project_path(project), |
-                method: :delete,                          |
-                data: { confirm: 'Are you sure?' }        |
+            %td= project.name
+            %td= link_to 'Show project', project_path(project) , method: :get, class: "btn btn-info"
+            %td=link_to 'Edit project', edit_project_path(project), method: :get, class: "btn btn-warning"
+            %td=link_to 'Destroy the project', project_path(project) , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
+            
+%nav
+  %ul.pagination
+    %li
+      %a{"aria-label" => "Previous", :href => "#"}
+        %span{"aria-hidden" => "true"} «
+    %li
+      %a{:href => "#"} 1
+    %li
+      %a{:href => "#"} 2
+    %li
+      %a{:href => "#"} 3
+    %li
+      %a{:href => "#"} 4
+    %li
+      %a{:href => "#"} 5
+    %li
+      %a{"aria-label" => "Next", :href => "#"}
+        %span{"aria-hidden" => "true"} »

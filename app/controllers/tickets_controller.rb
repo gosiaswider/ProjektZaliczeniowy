@@ -33,7 +33,13 @@ class TicketsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @ticket = @project.tickets.create(ticket_params)
-    redirect_to project_tickets_path(@project, @ticket)
+    
+    if @ticket.save
+      redirect_to @ticket
+    else
+      render 'new'
+    end
+    
   end
   
   def destroy
