@@ -19,10 +19,16 @@ class TicketsController < ApplicationController
      @project = Project.find(params[:project_id])
   end
   
-  def edit
+  def update
     @project = Project.find(params[:project_id])
     @ticket = @project.tickets.find(params[:id])
-  end
+    
+    if @ticket.update(ticket_params)
+      redirect_to @ticket
+    else
+      render 'edit'
+    end
+   end
   
   def create
     @project = Project.find(params[:project_id])
