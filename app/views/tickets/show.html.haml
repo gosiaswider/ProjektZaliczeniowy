@@ -4,10 +4,9 @@
     %small from project 
     = @project.name
     
-.panel
-  = @ticket.description
-  = @ticket.status
-  = @ticket.difficulty
-  = image_tag @ticket.picture.url(:medium)
+= @ticket.description
+= @ticket.status
+= @ticket.difficulty
+= image_tag @ticket.picture.url(:medium)
 
 =link_to 'Back to list of tickets', project_tickets_path(@project) , method: :get, class: "btn btn-default"
