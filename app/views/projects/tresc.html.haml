@@ -1,8 +1,0 @@
-%p
-  %strong Name:
-  = @project.text
-%br
-=link_to 'New project', new_project_path , method: :get, class: "btn btn-default"
-.btn-group
-  %button.btn.btn-inverse.btn-xs{:href => "#"} 
-    = link_to 'Back', projects_path

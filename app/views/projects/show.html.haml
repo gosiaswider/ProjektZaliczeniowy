@@ -1,12 +1,8 @@
-%h3
-  %strong name:
-  = @project.name
-%h3
-  %strong Description:
-  = @project.description
-  
-=link_to 'Edit Project', edit_project_path(@project) , method: :get, class: "btn btn-default"
-
-=link_to 'Back to Projects', projects_path , method: :get, class: "btn btn-default"
-
-=link_to 'Tickets', project_tickets_path(@project) , method: :get, class: "btn btn-default"
+.row
+  .col
+    %h3= @project.name
+    %h3= @project.description
+  .btn-group{:role => "group"}
+  =link_to 'Edit Project', edit_project_path(@project) , method: :get, class: "btn btn-warning"
+  =link_to 'Back to Projects', projects_path , method: :get, class: "btn btn-info"
+  =link_to 'Tickets', project_tickets_path(@project) , method: :get, class: "btn btn-primary"

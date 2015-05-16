@@ -2,4 +2,7 @@
   = f.input :name
   = f.input :description
   %br
-  = f.button :submit
+  .btn-group{:role => "group"}
+  = f.button :submit, class: "btn btn-success"
+  =link_to 'Back to Projects', projects_path , method: :get, class: "btn btn-info"
+  %br
