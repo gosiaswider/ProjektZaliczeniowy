@@ -24,7 +24,7 @@ class TicketsController < ApplicationController
     @ticket = @project.tickets.find(params[:id])
     
     if @ticket.update(ticket_params)
-      redirect_to @ticket
+      redirect_to project_ticket_path(@project.id, @ticket)
     else
       render 'edit'
     end
@@ -35,7 +35,7 @@ class TicketsController < ApplicationController
     @ticket = @project.tickets.create(ticket_params)
     
     if @ticket.save
-      redirect_to @ticket
+      redirect_to project_ticket_path(@project.id, @ticket)
     else
       render 'new'
     end
@@ -46,7 +46,7 @@ class TicketsController < ApplicationController
     @project = Project.find(params[:project_id])
     @ticket = @project.tickets.find(params[:id])
     @ticket.destroy
-    redirect_to project_tickets_path(@project, @ticket)
+    redirect_to project_tickets_path(@project.id, @ticket)
   end
   
   private

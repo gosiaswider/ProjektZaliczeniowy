@@ -9,10 +9,6 @@
   %br
   %br
   .btn-group{:role => "group"}
-    = f.button :submit
-    = link_to 'Back to list of tickets', project_tickets_path(@project) , method: :get, class: "btn btn-default"
-  
-%br
-%br
-%br
-%br
+  = f.button :submit
+  =link_to 'Back to list of tickets', project_tickets_path(@project) , method: :get, class: "btn btn-default"
+  %br
