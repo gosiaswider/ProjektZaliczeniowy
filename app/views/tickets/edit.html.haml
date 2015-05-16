@@ -1,3 +1,18 @@
 %h1 Edit ticket
-= render 'form'
+= simple_form_for([@project, @ticket], html: { class: 'form-vertical' }) do |f|   
+  = f.input :name
+  = f.input :description
+  = f.input :priority do
+    = f.select :priority, ['Low', 'Normal', 'High', 'Urgent', 'Immediately']
+  = f.input :difficulty do
+    = f.select :priority, ['Easy', 'Medium','Hard']
+  = f.input :status do
+    = f.select :status, ['Open', 'Closed', 'Canceled']
+  = f.input :picture
+  = f.check_box :remove_picture
+  %br
+  %br
+  .btn-group{:role => "group"}
+  = f.button :submit, class: "btn btn-success"
+  = link_to 'Back to list of tickets', project_tickets_path(@project), :method => :get, class: "btn btn-info"
 %br
