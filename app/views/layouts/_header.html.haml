@@ -13,18 +13,17 @@
       %ul.nav.navbar-nav.navbar-right
         .btn-group
           %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
-            Menu
+            Account
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
               - if user_signed_in?
                 = link_to "Edit Your Account", edit_user_registration_path
-              - else
-                = link_to "Register Your Account", new_user_registration_path
+            %li   
+              = link_to "Register New Account", new_user_registration_path
             %li
               - if user_signed_in?
                 = link_to "Sign_out", destroy_user_session_path, method: :delete
               - else
                 = link_to "Sign_in", new_user_session_path 
       
-          
