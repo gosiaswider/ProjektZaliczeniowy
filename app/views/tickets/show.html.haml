@@ -1,12 +1,21 @@
 .page-header
   %h1
     = @ticket.name
-    %small from project 
+    %small from project: 
     = @project.name
-    
-= @ticket.description
-= @ticket.status
-= @ticket.difficulty
-= image_tag @ticket.picture.url(:medium)
 
+%h3
+  %strong Description:
+  = @ticket.description
+%h3
+  %strong Status:
+  = @ticket.status
+%h3
+  %strong Difficulty:
+  = @ticket.difficulty
+%br
+%strong Picture:
+= image_tag @ticket.picture.url(:medium)
+%br
+%br
 =link_to 'Back to list of tickets', project_tickets_path(@project) , method: :get, class: "btn btn-info"
