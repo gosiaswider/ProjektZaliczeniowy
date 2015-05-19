@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519122604) do
+ActiveRecord::Schema.define(version: 20150519130340) do
 
   create_table "models", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,6 +80,10 @@ ActiveRecord::Schema.define(version: 20150519122604) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.string   "confirmed_at"
+    t.string   "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.string   "confirmation_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
