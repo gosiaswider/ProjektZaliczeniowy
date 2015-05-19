@@ -12,7 +12,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150519130340) do
+=======
+ActiveRecord::Schema.define(version: 20150516124003) do
+>>>>>>> parent of b282b09... install devise_invitation
 =======
 ActiveRecord::Schema.define(version: 20150516124003) do
 >>>>>>> parent of b282b09... install devise_invitation
@@ -77,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150516124003) do
     t.boolean  "admin",                  default: false
     t.boolean  "project_leader",         default: false
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -89,6 +94,8 @@ ActiveRecord::Schema.define(version: 20150516124003) do
     t.string   "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "confirmation_token"
+=======
+>>>>>>> parent of b282b09... install devise_invitation
 =======
 >>>>>>> parent of b282b09... install devise_invitation
   end
