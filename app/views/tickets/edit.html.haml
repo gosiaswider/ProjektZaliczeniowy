@@ -3,7 +3,4 @@
   = render :partial => 'form', :locals => { :f => f}
   %br
   %br
-  .btn-group{:role => "group"}
-  = f.button :submit, class: "btn btn-success"
-  = link_to 'Back to list of tickets', project_tickets_path(@project), :method => :get, class: "btn btn-info"
-%br
+  
