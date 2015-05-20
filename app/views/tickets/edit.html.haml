@@ -1,19 +1,6 @@
 %h1 Edit ticket
 = simple_form_for([@project, @ticket], html: { class: 'form-vertical' }) do |f|   
-  = f.input :name
-  = f.input :description
-  = f.input :priority do
-    = f.select :priority, ['Low', 'Normal', 'High', 'Urgent', 'Immediately']
-  = f.input :difficulty do
-    = f.select :priority, ['Easy', 'Medium','Hard']
-  = f.input :status do
-    = f.select :status, ['Open', 'Closed', 'Canceled']
-  - if @ticket.picture.present?
-    = image_tag @ticket.picture.url(:medium )
-    Remove the picture
-    = f.check_box :remove_picture
-  - else
-    = f.input :picture
+  = render :partial => 'form', :locals => { :f => f }
   %br
   %br
   

@@ -13,6 +13,9 @@
 %h3
   %strong Difficulty:
   = @ticket.difficulty
+%h3
+  %strong Attachment name:
+  = @ticket.attachment_name
 %br
 %strong Picture:
 = image_tag @ticket.picture.url(:medium)
