@@ -8,7 +8,15 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end  
-
+  
+  private
+  def authenticate_inviter!
+    unless user.project_leader == 'YES'
+      redirect_to root_url, :alert => "Access Denied"
+    end
+    super
+  end
+  
   protected
 
   def configure_permitted_parameters
