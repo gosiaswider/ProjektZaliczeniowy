@@ -1,4 +1,6 @@
+.btn-group{:role => "group"}
 =link_to 'New project', new_project_path , method: :get, class: "btn btn-primary"
+= link_to "Add member to Project", new_user_invitation_path(), metod: :get, class: "btn btn-primary"
 %br
 %br
 - @project.each do |project|
