@@ -4,9 +4,17 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :invitable
+  
   include DeviseInvitable::Inviter
   
+  def edit
+    if User.exists?
+      @user = User.find(params[:id])
+    else
+      redirect_to new_user_registration_path
+    end
+  end
   
   def full_name
     [first_name, last_name].join(' ')

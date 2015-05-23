@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520162312) do
+ActiveRecord::Schema.define(version: 20150520185325) do
 
   create_table "models", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150520162312) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "admin",                  default: false
-    t.boolean  "project_leader",         default: false
+    t.string   "project_leader",         default: "f"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

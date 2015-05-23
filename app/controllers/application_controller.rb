@@ -10,11 +10,12 @@ class ApplicationController < ActionController::Base
   end  
   
   private
-  def authenticate_inviter!
-    unless user.project_leader == 'YES'
-      redirect_to root_url, :alert => "Access Denied"
+  def update
+    if this
+      redirect_to root_path
+    else
+      super
     end
-    super
   end
   
   protected
