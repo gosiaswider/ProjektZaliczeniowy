@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
    validates :last_name, presence: true
   
   has_and_belongs_to_many :tickets
- 
+  has_and_belongs_to_many :member_projects, :class_name =>"Project", :foreign_key =>"member_id", :association_foreign_key => "member_project_id"
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

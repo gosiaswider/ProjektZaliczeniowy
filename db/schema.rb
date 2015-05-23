@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523095045) do
+ActiveRecord::Schema.define(version: 20150523102238) do
 
   create_table "models", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20150523095045) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "projects_users", id: false, force: :cascade do |t|
+    t.integer "member_project_id"
+    t.integer "member_id"
+  end
+
+  add_index "projects_users", ["member_id"], name: "index_projects_users_on_member_id"
+  add_index "projects_users", ["member_project_id"], name: "index_projects_users_on_member_project_id"
 
   create_table "tickets", force: :cascade do |t|
     t.string   "name"
@@ -72,7 +80,6 @@ ActiveRecord::Schema.define(version: 20150523095045) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "admin",                  default: false
-    t.string   "project_leader",         default: "f"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

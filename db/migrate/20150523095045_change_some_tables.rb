@@ -1,3 +1,5 @@
 class ChangeSomeTables < ActiveRecord::Migration
-   add_foreign_key :tickets, :users
+   def change
+     add_foreign_key :tickets, :users
+   end
 end
