@@ -22,7 +22,8 @@
           %td
             .btn-group{:role => "group"}
             = link_to 'Show', project_ticket_path(@project, p) , method: :get, class: "btn btn-info"
-            = link_to 'Edit', edit_project_ticket_path(@project, p) , method: :get, class: "btn btn-warning"
-            = link_to 'Delete', project_ticket_path(@project, p), method: :delete,  data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
+            - if can? :ud, p
+              = link_to 'Edit', edit_project_ticket_path(@project, p) , method: :get, class: "btn btn-warning"
+              = link_to 'Delete', project_ticket_path(@project, p), method: :delete,  data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
 
 =link_to 'Back to project', project_path(@project) , method: :get, class: "btn btn-info"

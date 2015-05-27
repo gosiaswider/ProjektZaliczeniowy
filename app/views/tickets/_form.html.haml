@@ -7,9 +7,15 @@
   = f.select :priority, ['Easy', 'Medium','Hard']
 = f.input :status do
   = f.select :status, ['Open', 'Closed', 'Canceled']
-= f.input :attachment_name
-= f.input :picture
-= f.check_box :remove_picture
+
+- if @ticket.picture.present?
+  = link_to "#{@ticket.attachment_name}", @ticket.picture.url(:original, false)
+  %br/
+  Remove the file
+  = f.check_box :remove_picture
+- else
+  = f.input :attachment_name
+  = f.input :picture
 %br
 %br
 .btn-group{:role => "group"}

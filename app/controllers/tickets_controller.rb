@@ -17,6 +17,7 @@ class TicketsController < ApplicationController
   
   def new
      @project = Project.find(params[:project_id])
+      @ticket = Ticket.new
   end
   
   def update
@@ -33,6 +34,7 @@ class TicketsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @ticket = @project.tickets.create(ticket_params)
+    @ticket.created_by_id = current_user.id
     
     if @ticket.save
       redirect_to project_ticket_path(@project.id, @ticket)

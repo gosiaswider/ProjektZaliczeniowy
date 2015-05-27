@@ -13,12 +13,14 @@
 %h3
   %strong Difficulty:
   = @ticket.difficulty
-%h3
+
+- if @ticket.picture.present?
+  %h3
   %strong Attachment name:
   = @ticket.attachment_name
-%br
-%strong Picture:
-= image_tag @ticket.picture.url(:medium)
+  %br
+  %strong Attachment:
+  = link_to "#{@ticket.attachment_name}", @ticket.picture.url(:original, false)
 %br
 %br
 =link_to 'Back to list of tickets', project_tickets_path(@project) , method: :get, class: "btn btn-info"
