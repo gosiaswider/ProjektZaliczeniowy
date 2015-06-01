@@ -5,15 +5,13 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
        user ||= User.new # guest user (not logged in)
-       can :create, Project if user.id.present?
-       can :manage, Project do |project|
-         project.try(:user_id) == user.id
-      end
-      can :read, :all
-      can :create, Ticket if user.present?
-      can :ud, Ticket do |ticket|
-       ticket.try(:created_by_id) == user.id
-      end
+        can :create, Project
+        can :manage, Project, :user_id => user.id 
+        can :create, Ticket
+        can :manage, Ticket, :project => {:user_id => user.id}    
+           #else
+        can :read, :all
+       
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
